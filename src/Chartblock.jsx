@@ -12,7 +12,8 @@ export class Chartblock extends Component {
   }
 
   addData = (value) => {
-    const newData = [...this.state.data,{x: new Date().toString(), y: value}];
+    const date = new Date();
+    const newData = [...this.state.data, {x: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`, y: value}];
     localStorage.setItem('data', JSON.stringify(newData));
     this.setState({data: newData});
   };
@@ -24,7 +25,7 @@ export class Chartblock extends Component {
 
   render() {
     const {props} = this;
-    const view = [1280, 720];
+    const view = [480, 320];
     const trbl = [0, 0, 0, 0];
     const horizontalAxisHeight = 30;
     const verticalAxisWidth = 42;
