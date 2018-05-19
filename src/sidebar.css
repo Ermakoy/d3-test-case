@@ -1,0 +1,25 @@
+.sidebar {
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    height:inherit;
+    width: 300px;
+}
+
+.left {
+    justify-content: flex-end;
+}
+
+.right {
+    justify-content: flex-start;
+}
+.clicked {
+    width: 0;
+}
+.arrow:hover{
+    cursor: pointer;
+}
+.arrow-clicked{
+    margin: 0 -10px;
+}
+

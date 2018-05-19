@@ -1,0 +1,10 @@
+.controls {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+}
