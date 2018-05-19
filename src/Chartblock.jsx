@@ -8,19 +8,23 @@ export class Chartblock extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {data: window.localStorage.data || []}
+    this.state = {data: JSON.parse(localStorage.getItem('data')) || []}
   }
 
   addData = (value) => {
-    this.setState((prevState) => ({data: [...prevState.data, {x: new Date().toString(), y: value}]}))
+    const newData = [...this.state.data,{x: new Date().toString(), y: value}];
+    localStorage.setItem('data', JSON.stringify(newData));
+    this.setState({data: newData});
   };
   deleteItem = incomeItem => {
-    this.setState(prevState => ({data: prevState.data.filter(item => item != incomeItem)}));
+    const newData = this.state.data.filter(item => item !== incomeItem);
+    localStorage.setItem('data', JSON.stringify(newData));
+    this.setState({data: newData});
   };
 
   render() {
     const {props} = this;
-    const view = [480, 320];
+    const view = [1280, 720];
     const trbl = [0, 0, 0, 0];
     const horizontalAxisHeight = 30;
     const verticalAxisWidth = 42;
