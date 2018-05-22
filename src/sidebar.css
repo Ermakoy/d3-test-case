@@ -4,6 +4,9 @@
     align-items: center;
     height:inherit;
     width: 300px;
+    -webkit-transition: width 2s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
 }
 
 .left {
