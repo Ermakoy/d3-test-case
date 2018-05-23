@@ -121,12 +121,10 @@ class HorizontalAxis extends React.Component {
 
   render() {
     const {scale, view, trbl, labelFn, tickValues, orientation} = this.props;
-    const [width, height] = view;
     let y1 = 0;
     if (orientation === HorizontalAxis.orientation.TOP) {
       y1 = view[1];
     }
-    const y2 = y1;
     const transform = `translate(${trbl[3]}, ${trbl[0]})`;
     return (
       <g {...{transform}}>
@@ -236,8 +234,7 @@ export class LinePlot extends React.Component {
   }
 
   render() {
-    const {trbl, view, data, xScale, yScale, year} = this.props;
-    const [width, height] = view;
+    const {trbl, view, data, xScale, yScale} = this.props;
     const transform = `translate(${trbl[3]}, ${trbl[0]})`;
     return (
       <g {...{transform}}>
