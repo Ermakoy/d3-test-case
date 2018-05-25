@@ -14,7 +14,7 @@ export default ChartComponent => (
       };
     }
 
-    fitParentContainer() {
+    fitParentContainer = () => {
       const {parentHeight, parentWidth} = this.state;
       const currentContainer = this.chartContainer
         .getBoundingClientRect();
@@ -24,7 +24,7 @@ export default ChartComponent => (
         parentHeight: currentContainer.height
       })
 
-    }
+    };
 
     renderChart() {
       const {parentWidth, parentHeight} = this.state;
