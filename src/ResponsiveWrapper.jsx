@@ -26,12 +26,12 @@ export default ChartComponent => (
 
     };
 
-    renderChart() {
+    renderChart = () => {
       const {parentWidth, parentHeight} = this.state;
       return (
         <ChartComponent {...this.props} view={[parentWidth, parentHeight]}/>
       )
-    }
+    };
 
     render() {
       const {containerWidth} = this.state;
