@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as d3 from 'd3';
+
+import ResponsiveWrapper from './ResponsiveWrapper';
+
 import './chart.css';
 
-export class Chart extends React.Component {
+class Chart extends React.Component {
   static propTypes = {
     data: PropTypes.array.isRequired,
     horizontalAxisHeight: PropTypes.number.isRequired,
@@ -243,3 +246,6 @@ export class LinePlot extends React.Component {
     );
   }
 }
+
+
+export default ResponsiveWrapper(Chart);

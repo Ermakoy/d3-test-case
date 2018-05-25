@@ -5,7 +5,6 @@ export class Controls extends Component {
   constructor(props) {
     super(props);
     this.input = React.createRef();
-    console.log(this.props);
   }
   createRecord = item => (
     <div key={item.x} className="item">

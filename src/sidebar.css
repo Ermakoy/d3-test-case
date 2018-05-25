@@ -3,7 +3,8 @@
     display: flex;
     align-items: center;
     height:inherit;
-    width: 300px;
+    width: 20vw;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
     -webkit-transition: width 2s;
     -webkit-transition-timing-function: ease;
     transition-timing-function: ease;
@@ -19,10 +20,29 @@
 .clicked {
     width: 0;
 }
-.arrow:hover{
+.triangle:hover{
     cursor: pointer;
 }
-.arrow-clicked{
-    margin: 0 -10px;
+
+.clicked > .triangle {
+    margin:0 -30px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+}
+
+.triangle-right {
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+
+    border-left: 30px solid steelblue;
+}
+.triangle-left{
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+
+    border-right:30px solid steelblue;
 }
 

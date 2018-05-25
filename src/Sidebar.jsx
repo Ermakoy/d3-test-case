@@ -3,6 +3,11 @@ import classNames from 'classnames';
 
 import './sidebar.css';
 
+const Triangle = props => <div className={`triangle triangle-${props.side}`} />;
+
+const TriangleRight = Triangle({side: 'right'});
+const TriangleLeft = Triangle({side: 'left'});
+
 export class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -24,12 +29,12 @@ export class Sidebar extends Component {
       right: right && !left,
       clicked: clicked
     });
-    const arrow = left ? (clicked ? '►' : '◄') :
-      (clicked ? '◄' : '►')
+    const arrow = left ? (clicked ? 'right' : 'left') :
+      (clicked ? 'left' : 'right')
     ;
     return (
       <div className={classes}>
-        <p className={`arrow ${clicked ? 'arrow-clicked' : ''}`} onClick={this.handleClick}>{arrow}</p>
+        <div className={`triangle triangle-${arrow}`} onClick={this.handleClick} />
       </div>)
       ;
   }

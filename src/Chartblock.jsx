@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Chart} from './Chart';
+import Chart from './Chart';
 import {Controls} from './Controls';
 
 import './chartblock.css';
@@ -8,7 +8,7 @@ export class Chartblock extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {data: JSON.parse(localStorage.getItem('data')) || []}
+    this.state = {data: JSON.parse(localStorage.getItem('data')) || []};
   }
 
   addData = (value) => {
@@ -25,14 +25,12 @@ export class Chartblock extends Component {
 
   render() {
     const {props} = this;
-    const view = [480, 320];
     const trbl = [0, 0, 0, 0];
     const horizontalAxisHeight = 30;
     const verticalAxisWidth = 42;
     return (
-      <div className="chartblock">
-        <Chart data={this.state.data.map(item => +item.y)} {...props} {...{
-          view,
+      <div className="chartblock" id="chartblock" ref={this.chartBlock}>
+        <Chart className="chart" data={this.state.data.map(item => +item.y)} {...props} {...{
           trbl,
           horizontalAxisHeight,
           verticalAxisWidth
